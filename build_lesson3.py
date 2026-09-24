@@ -191,26 +191,10 @@ def build(is_teacher):
         fills = [[FILL_ANSWERS, FILL_ANSWERS]] * len(rows)
         add(make_table([620, 8730], rows, fills=fills))
         add(make_plain(''))
+    else:
         add(make_plain(''))
 
-    # ---- Part 2 ----
-    add(make_heading(C.PART2_TITLE, '20'))
-    add(make_plain(C.PART2_INTRO))
-    add(make_plain(C.CONV_LEAD))
-    conv_rows = [[[[dict(text='Plain', bold=True)]], [[dict(text='More formal', bold=True)]]]]
-    for plain, formal in C.CONVERSIONS:
-        conv_rows.append([[[dict(text=plain)]], [[dict(text=formal)]]])
-    fills = [[FILL_PATTERN, FILL_PATTERN]] * len(conv_rows)
-    add(make_table([4675, 4675], conv_rows, fills=fills))
-    add(make_plain(''))
-    add(make_plain(C.PARA_LEAD))
-    for para in C.EXAMPLE_PARAS:
-        add(make_plain(para, border=True))
-
-    # ---- Part 3 ----
-    add(make_plain(''))
-    add(make_heading(C.PART3_TITLE, '1'))
-    add(make_plain(C.PART3_INTRO))
+    # ---- Warm-up (words → nouns), right after the proofreading part ----
     add(make_heading(C.WARMUP_TITLE, '31', sz='22'))
     add(make_plain(C.WARMUP_INTRO))
     wrows = [[[[dict(text='Word', bold=True)]], [[dict(text='Noun', bold=True)]]]]
@@ -220,6 +204,25 @@ def build(is_teacher):
         else:
             wrows.append([[[dict(text=word)]], [[dict(text='')]]])
     add(make_table([2605, 6745], wrows))
+    add(make_plain(''))
+
+    # ---- Part 2 ----
+    add(make_heading(C.PART2_TITLE, '20'))
+    add(make_plain(C.PART2_INTRO))
+    for ex in C.EXAMPLES:
+        add(make_heading(ex['title'], '31', sz='22'))
+        rows = [
+            [[dict(text='Plain:')], [dict(text=ex['plain'])]],
+            [[dict(text='More formal:')], [dict(text=ex['formal'])]],
+        ]
+        fills = [[FILL_PATTERN, FILL_PATTERN]] * 2
+        add(make_table([2605, 6745], rows, fills=fills))
+        add(make_plain(ex['paragraph'], border=True))
+
+    # ---- Part 3 ----
+    add(make_plain(''))
+    add(make_heading(C.PART3_TITLE, '1'))
+    add(make_plain(C.PART3_INTRO))
     for title, simple, prompt, answer in C.SETS:
         add(make_heading(title, '31', sz='22'))
         if is_teacher:

@@ -1,4 +1,4 @@
-# Lesson 3 content data — Nominalisation (F5 Grammar), REVISED per Helen's notes. UK spelling.
+# Lesson 3 content data — Nominalisation (F5 Grammar), v4 per Helen's notes. UK spelling.
 
 HEADER_3 = "Grammar – Lesson 3: Nominalisation"
 TOPIC_LINE = "Nominalisation"
@@ -9,9 +9,9 @@ PART1_INTRO = ("Each sentence contains TWO errors: one in an inversion structure
 
 # (sentence, correction, fix-notes) — every item pairs ONE inversion error with ONE relative-clause error
 QUIZ = [
-    ("Not only social media connects people far apart, but it also spreads rumours which often goes unchecked.",
-     "Not only does social media connect people far apart, but it also spreads rumours which often go unchecked.",
-     "(Add do before the subject; goes → go — ‘which’ refers to rumours.)"),
+    ("Not only online learning saves travelling time, but it also gives students access to courses which is not available in their own schools.",
+     "Not only does online learning save travelling time, but it also gives students access to courses which are not available in their own schools.",
+     "(Add do before the subject; is → are — ‘which’ refers to courses.)"),
     ("Rarely teenagers verify the truth of what they share online, which make them easy targets of scams.",
      "Rarely do teenagers verify the truth of what they share online, which makes them easy targets of scams.",
      "(Add do before the subject; make → makes — the clause refers to sharing without checking.)"),
@@ -28,48 +28,63 @@ QUIZ = [
 
 TEACHER_ANSWERS_LABEL = "Teacher’s answers"
 
+WARMUP_TITLE = "Warm-up: From words to nouns"
+WARMUP_INTRO = "Write the noun form of each word. The last six words are more challenging."
+WARMUP_WORDS = ["decide", "improve", "communicate", "introduce", "regulate", "protect", "explain",
+                "solve", "use", "develop", "aware", "important", "depend", "responsible",
+                "choose", "know", "lose", "prove", "believe", "strong"]
+WARMUP_ANSWERS = ["decision", "improvement", "communication", "introduction", "regulation", "protection",
+                  "explanation", "solution", "use", "development", "awareness", "importance",
+                  "dependence", "responsibility", "choice", "knowledge", "loss", "proof",
+                  "belief", "strength"]
+
 PART2_TITLE = "Part 2: Nominalisation in formal writing"
 PART2_INTRO = ("Nominalisation names an action or a quality as a noun, so that ‘people use phones’ becomes "
-               "‘the use of phones’. Naming ideas in this way packs a sentence into fewer words and gives formal "
-               "writing a more academic tone. It is one of the clearest signs of a higher band in DSE Paper 2.")
-CONV_LEAD = "Study how each plain sentence is converted. The new version names the action or quality as a noun and sounds more mature, yet the meaning stays the same."
-# (plain, formal) pairs — formal version restates the SAME facts, only the construction changes
-CONVERSIONS = [
-    ("People use their phones all the time, and many young people cannot sleep well.",
-     "The constant use of phones affects many young people’s sleep."),
-    ("The company will improve its online security system, so customers will feel safer.",
-     "The improvement of the company’s online security system will make customers feel safer."),
-    ("Young people depend on their phones too much, and their schoolwork suffers.",
-     "Young people’s heavy dependence on their phones affects their schoolwork."),
-    ("Students who share photos online should be aware of online privacy.",
-     "Students who share photos online should show awareness of online privacy."),
-    ("The government decided to regulate social media companies, and the public supported this.",
-     "The government’s decision to regulate social media companies won public support."),
-    ("Tech companies should be responsible for users’ data, but many ignore this duty.",
-     "Many tech companies ignore their responsibility for users’ data."),
-    ("Because people share news very quickly, rumours spread fast.",
-     "The rapid sharing of news makes rumours spread quickly."),
-    ("Many people prefer reading news on social media to reading newspapers.",
-     "Many people show a clear preference for social media news over newspapers."),
-]
-PARA_LEAD = "The short paragraphs below use the same idea. Notice how the nominalised phrases fit naturally into the sentences — nothing is forced."
-# 3 short paragraphs: proposal / argumentative / cause-and-effect on communication & technology
-EXAMPLE_PARAS = [
-    "The introduction of a school digital-literacy programme deserves serious consideration. It would give students the skills to manage their screen time and to judge online information for themselves, reducing the risk of cyberbullying and online scams. Parents and teachers alike would welcome such a step.",
-    "The importance of digital skills in the modern workplace can hardly be overstated. Students who master online tools at school gain a clear advantage when they graduate, while those who ignore them risk falling further behind. Schools, therefore, should treat digital literacy as a core subject rather than an option.",
-    "Owing to the widespread use of smartphones, many students struggle to concentrate for long periods. Revision tasks that once took half an hour now stretch over a whole evening, interrupted by notifications arriving every few minutes. Setting clear screen-time limits at home would benefit both study and sleep.",
+               "‘the use of phones’. It packs ideas into fewer words and gives formal writing a more academic "
+               "tone, and it is one of the clearest signs of a higher band in DSE Paper 2.")
+
+# 4 examples, each: title, plain (wordy student sentence), formal (same facts, nominalised), short paragraph
+# that opens with the formal sentence and flows naturally. Plain/formal pairs carry NO new information.
+EXAMPLES = [
+    {
+        "title": "Example 1: Verb → noun",
+        "plain": "The school decided to introduce e-books, and students supported this.",
+        "formal": "The school’s decision to introduce e-books won students’ support.",
+        "paragraph": ("The school’s decision to introduce e-books won students’ support. The introduction of the "
+                      "new system also saved paper and lightened schoolbags, and teachers soon noticed a rise in "
+                      "reading time. Other schools could follow this example with little extra cost."),
+    },
+    {
+        "title": "Example 2: Adjective → noun",
+        "plain": "Students should be aware of online scams.",
+        "formal": "Students should show awareness of online scams.",
+        "paragraph": ("Students should show awareness of online scams. The danger is real and growing, yet many "
+                      "victims discover the fraud only after money has already been lost, which means the damage "
+                      "is done. A short lesson on spotting false messages would build this awareness early."),
+    },
+    {
+        "title": "Example 3: Because-clause → noun phrase",
+        "plain": "Because people share news very quickly, rumours spread fast.",
+        "formal": "Owing to the rapid sharing of news, rumours spread quickly.",
+        "paragraph": ("Owing to the rapid sharing of news, rumours spread quickly. A false story can reach "
+                      "thousands of people within minutes, and the difficulty of checking every update means "
+                      "that some readers forward it before anyone notices. Careful readers, therefore, pause "
+                      "and verify before sharing anything."),
+    },
+    {
+        "title": "Example 4: If-clause → noun phrase",
+        "plain": "If the school does not update its computers, online lessons will fail.",
+        "formal": "Without updated computers, online lessons will fail.",
+        "paragraph": ("Without updated computers, online lessons will fail. The school’s plan to renew its "
+                      "equipment, however, has already won support from the Parent-Teacher Association, and "
+                      "teachers have promised to test the new system before the start of term."),
+    },
 ]
 
 PART3_TITLE = "Part 3: Practice sets"
-PART3_INTRO = ("First, warm up by turning words into nouns. Then rewrite each simple sentence using "
-               "nominalisation. The sentences are about technology and communication, so keep the register "
-               "formal. The last three sets (4, 5 and 6) are more challenging.")
-WARMUP_TITLE = "Warm-up: From words to nouns"
-WARMUP_INTRO = "Write the noun form of each word."
-WARMUP_WORDS = ["decide", "introduce", "communicate", "regulate", "improve", "develop",
-                "aware", "important", "depend", "responsible"]
-WARMUP_ANSWERS = ["decision", "introduction", "communication", "regulation", "improvement", "development",
-                  "awareness", "importance", "dependence", "responsibility"]
+PART3_INTRO = ("Rewrite each simple sentence using nominalisation. The sentences are about technology and "
+               "communication, so keep the register formal. The last three sets (4, 5 and 6) are more "
+               "challenging.")
 
 # Each set: title, simple sentence (plain, student-level), prompt, teacher answer (clearly better — level 3)
 SETS = [
