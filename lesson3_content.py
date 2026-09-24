@@ -82,23 +82,34 @@ EXAMPLES = [
     },
 ]
 
-# Linking sub-section (round-7, trimmed round-8 per Helen: ONE clear example, no demo paragraph)
+# Linking sub-section (round-7, trimmed round-8, extended round-9: 2 examples + how-to steps + Set 8)
 LINK_TITLE = "Nominalisation as a linking device"
 LINK_INTRO = ("Nominalisation can also link one sentence to the next: turn a verb or adjective into a noun "
               "and open the new sentence with it. Instead of the vague ‘This is because… / This shows that…’, "
               "use ‘This…’, ‘Such…’ or ‘The … of…’ — the noun bridge says the same thing in fewer words and "
               "earns a higher band.")
-LINK_EXAMPLE = {
-    "plain": ("Many young people click on links without checking where they lead. This is because they trust "
-              "whatever looks official."),
-    "nominalised": ["Many young people click on links without checking where they lead. ",
-                    {"t": "Such misplaced trust", "i": True},
-                    " is exactly what scammers exploit."],
-}
+LINK_EXAMPLES = [
+    {"plain": ("Many young people click on links without checking where they lead. This is because they trust "
+               "whatever looks official."),
+     "nominalised": ["Many young people click on links without checking where they lead. ",
+                     {"t": "Such misplaced trust", "i": True},
+                     " is exactly what scammers exploit."]},
+    {"plain": ("Students rarely report scam messages to their teachers. This is because they feel "
+               "embarrassed."),
+     "nominalised": ["Students rarely report scam messages to their teachers. ",
+                     {"t": "This embarrassment", "i": True},
+                     ", however, plays straight into the fraudsters’ hands."]},
+]
+LINK_HOWTO = [
+    "1.  Find the verb or adjective you want to carry over (trust, embarrassed).",
+    "2.  Change it into a noun (trust → trust; embarrassed → embarrassment — the warm-up list can help).",
+    "3.  Open the next sentence with ‘This’ or ‘Such’ + the noun.",
+    "4.  Delete the vague ‘This is because…’ and add your new idea after the noun.",
+]
 
 PART3_TITLE = "Part 3: Practice sets"
 PART3_INTRO = ("Rewrite each simple sentence using nominalisation. The sentences are about technology and "
-               "communication, so keep the register formal. The later sets (4–7) are more challenging.")
+               "communication, so keep the register formal. The later sets (4–8) are more challenging.")
 
 # Each set: title, simple sentence (plain, student-level), prompt, teacher answer (clearly better — level 3)
 # Sets 1-3 mirror the four Example moves with DIFFERENT target nouns; sets 4-6 are harder.
@@ -132,6 +143,12 @@ SETS = [
      "Turn the adjective ‘careless’ into a noun and replace ‘This is because’ with a noun bridge opening "
      "‘This…’ or ‘Such…’.",
      "Few young people question what they read online. Such carelessness makes them easy prey for scammers."),
+    ("Example Set 8 (Linking: verb → noun)",
+     "Parents check their children’s phones every night. This is because they worry about online dangers.",
+     "Turn the verb ‘worry’ into a noun (same form) and replace ‘This is because’ with a noun bridge "
+     "opening ‘This…’ or ‘Such…’.",
+     "Many parents check their children’s phones every night. Such worry about online dangers is "
+     "understandable, but it can push teenagers away."),
 ]
 
 PART4_TITLE = "Part 4: Writing Task"
