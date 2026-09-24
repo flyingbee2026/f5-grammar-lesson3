@@ -9,21 +9,21 @@ PART1_INTRO = ("Each sentence contains TWO errors: one in an inversion structure
 
 # (sentence, correction, fix-notes) — every item pairs ONE inversion error with ONE relative-clause error
 QUIZ = [
-    ("Not only social media connects people instantly, but it also spreads stories which is often false.",
-     "Not only does social media connect people instantly, but it also spreads stories which are often false.",
-     "(Add do before the subject; is → are — ‘which’ refers to stories.)"),
-    ("Rarely teenagers check the sources of the news they read online, which make them easy to fool.",
-     "Rarely do teenagers check the sources of the news they read online, which makes them easy to fool.",
-     "(Add do before the subject; make → makes — the clause refers to the whole activity of checking sources.)"),
-    ("Only by setting clear screen-time rules parents can help their children, who often spends hours gaming.",
-     "Only by setting clear screen-time rules can parents help their children, who often spend hours gaming.",
+    ("Not only social media connects people far apart, but it also spreads rumours which often goes unchecked.",
+     "Not only does social media connect people far apart, but it also spreads rumours which often go unchecked.",
+     "(Add do before the subject; goes → go — ‘which’ refers to rumours.)"),
+    ("Rarely teenagers verify the truth of what they share online, which make them easy targets of scams.",
+     "Rarely do teenagers verify the truth of what they share online, which makes them easy targets of scams.",
+     "(Add do before the subject; make → makes — the clause refers to sharing without checking.)"),
+    ("Only by setting clear screen-time rules parents can protect their children, who often spends hours gaming late into the night.",
+     "Only by setting clear screen-time rules can parents protect their children, who often spend hours gaming late into the night.",
      "(Move can before parents — ‘Only by’ inverts subject and auxiliary; spends → spend — ‘who’ refers to children.)"),
-    ("Never the school has considered banning phones in class, which is used by nearly every student.",
-     "Never has the school considered banning phones in class, which are used by nearly every student.",
-     "(Move has before the school — ‘Never’ inverts; is → are — ‘which’ refers to phones.)"),
-    ("Seldom students will question the news which they read it on social media.",
-     "Seldom will students question the news which they read on social media.",
-     "(Move will before students — ‘Seldom’ inverts; delete it — ‘which they read’ is complete without a second object.)"),
+    ("Never the school has considered banning phones in class, which distracts students from every lesson.",
+     "Never has the school considered banning phones in class, which distract students from every lesson.",
+     "(Move has before the school — ‘Never’ inverts; distracts → distract — ‘which’ refers to phones.)"),
+    ("Seldom victims of online scams report the fraud to the police, which make it harder to catch the criminals.",
+     "Seldom do victims of online scams report the fraud to the police, which makes it harder to catch the criminals.",
+     "(Add do before the subject; make → makes — the clause refers to the whole failure to report.)"),
 ]
 
 TEACHER_ANSWERS_LABEL = "Teacher’s answers"
@@ -33,24 +33,24 @@ PART2_INTRO = ("Nominalisation names an action or a quality as a noun, so that �
                "‘the use of phones’. Naming ideas in this way packs a sentence into fewer words and gives formal "
                "writing a more academic tone. It is one of the clearest signs of a higher band in DSE Paper 2.")
 CONV_LEAD = "Study how each plain sentence is converted. The new version names the action or quality as a noun and sounds more mature, yet the meaning stays the same."
-# (plain, formal) pairs — explanation of the move, no structure/function notes
+# (plain, formal) pairs — formal version restates the SAME facts, only the construction changes
 CONVERSIONS = [
-    ("People use their phones all day long.",
-     "The widespread use of smartphones worries teachers and parents."),
-    ("The company will improve its online security system.",
-     "The improvement of the company’s online security system will begin next month."),
-    ("Young people depend on their phones too much.",
-     "Young people’s heavy dependence on their phones shows no sign of weakening."),
-    ("Students should be aware of online privacy.",
-     "Awareness of online privacy is now taught in many schools."),
-    ("The government decided to control social media companies more strictly.",
-     "The government’s decision to regulate social media companies has won public support."),
-    ("Tech companies should be responsible for users’ data.",
-     "Tech companies must accept responsibility for users’ data."),
+    ("People use their phones all the time, and many young people cannot sleep well.",
+     "The constant use of phones affects many young people’s sleep."),
+    ("The company will improve its online security system, so customers will feel safer.",
+     "The improvement of the company’s online security system will make customers feel safer."),
+    ("Young people depend on their phones too much, and their schoolwork suffers.",
+     "Young people’s heavy dependence on their phones affects their schoolwork."),
+    ("Students who share photos online should be aware of online privacy.",
+     "Students who share photos online should show awareness of online privacy."),
+    ("The government decided to regulate social media companies, and the public supported this.",
+     "The government’s decision to regulate social media companies won public support."),
+    ("Tech companies should be responsible for users’ data, but many ignore this duty.",
+     "Many tech companies ignore their responsibility for users’ data."),
     ("Because people share news very quickly, rumours spread fast.",
-     "The rapid sharing of news allows rumours to spread quickly."),
+     "The rapid sharing of news makes rumours spread quickly."),
     ("Many people prefer reading news on social media to reading newspapers.",
-     "Young people’s preference for social media news over newspapers has reshaped the whole news industry."),
+     "Many people show a clear preference for social media news over newspapers."),
 ]
 PARA_LEAD = "The short paragraphs below use the same idea. Notice how the nominalised phrases fit naturally into the sentences — nothing is forced."
 # 3 short paragraphs: proposal / argumentative / cause-and-effect on communication & technology
@@ -75,8 +75,8 @@ WARMUP_ANSWERS = ["decision", "introduction", "communication", "regulation", "im
 SETS = [
     ("Example Set 1 (Turn verbs into nouns)",
      "People use social media all the time, so they cannot concentrate on their studies.",
-     "Turn the verb ‘use’ into a noun and begin with ‘The constant use of ...’.",
-     "The constant use of social media makes it hard for students to concentrate."),
+     "Turn the verb ‘use’ into a noun: begin with ‘Students’ constant use of ...’.",
+     "Students’ constant use of social media weakens their concentration."),
     ("Example Set 2 (Turn verbs into nouns)",
      "The school decided to introduce a new e-learning platform, and many students welcomed the idea.",
      "Turn ‘decided to introduce’ into a noun phrase that opens the sentence.",
@@ -102,30 +102,30 @@ SETS = [
 PART4_TITLE = "Part 4: Writing Task"
 INSTR_LABEL = "Instructions:"
 INSTR_1 = ("1. Your school magazine is running a series called ‘Life in the Digital Age’. Write ONE paragraph "
-           "(about 80 words) giving your opinion on whether young people today are able to tell real news from "
-           "fake news, and suggesting ONE thing schools could do to help them.")
+           "(about 80 words) explaining why online scams have become a common problem for young people, and "
+           "suggesting ONE thing schools could do to protect them.")
 INSTR_2 = "2. Use TWO noun phrases formed by nominalisation and ONE relative clause."
 
 # label, text — each ~78-83 words, ≥2 nominalisations + exactly 1 relative clause, natural flow
 SAMPLES = [
     ("Sample answer 1 (Verbs → nouns) ",
-     "Some adults assume young people are internet experts, but the opposite is usually true. "
-     "The spread of fake news on social media is alarmingly fast, and it tests the judgement of even careful "
-     "readers. Schools, in my view, should teach students how to check the source of every story, which is a "
-     "vital skill in the digital age. Such lessons take only minutes and can be built into normal English "
-     "classes without extra cost or equipment."),
+     "Online scams have become a common problem because many young people trust official-looking messages "
+     "without a second thought. The spread of fake websites and phishing links is hard to stop, and it catches "
+     "even careful users by surprise. Schools, in my view, should teach students the importance of checking every "
+     "message before clicking, which is a vital skill in the digital world. A short course on online safety could "
+     "easily be added to existing computer lessons, and it would reach every student equally."),
     ("Sample answer 2 (Adjectives → nouns) ",
-     "Many teenagers rely on short videos for their news, and their awareness of bias is often weak. The "
-     "importance of checking information before sharing it becomes clear only after a false story has spread, "
-     "which usually means real harm has already been done. Schools should therefore run regular lessons on "
-     "media literacy, treating it as a basic life skill rather than an optional topic. Knowing how to pause and "
-     "check before sharing is the most useful survival habit in the digital world."),
+     "Young people’s awareness of online scams is often low, and their trust in strangers’ messages can be far "
+     "too high. The seriousness of the problem becomes clear only after money or personal data has been stolen, "
+     "which is usually far too late. Schools should therefore run regular lessons on spotting scams, treating it "
+     "as a basic life skill rather than an optional topic. Knowing how to pause and double-check before paying is "
+     "the strongest protection available to any student."),
     ("Sample answer 3 (Because / if → nouns) ",
-     "Owing to the constant flow of posts and videos, young people rarely pause to consider whether a story is "
-     "true. The ease of forwarding a shocking headline, together with the difficulty of checking it, explains "
-     "why fake news spreads so quickly. The responsibility for stopping it must be shared, which means schools, "
-     "platforms and parents all have a part to play. Parents, in particular, can show their children how to "
-     "compare sources, while teachers can make fact-checking a normal classroom habit."),
+     "Owing to the constant flow of scam messages on social media, young people are targeted almost daily. The "
+     "ease of creating fake websites, together with the difficulty of telling them from real ones, explains why "
+     "so many victims never notice until it is too late. The responsibility for protection must be shared, which "
+     "means schools, platforms and parents all have a part to play. Parents can talk openly about scams at home, "
+     "while teachers can make online safety a regular lesson topic."),
 ]
 
 UNDERSCORE_LINE = "_" * 85
