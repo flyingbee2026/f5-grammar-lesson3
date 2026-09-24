@@ -41,7 +41,8 @@ WARMUP_ANSWERS = ["decision", "improvement", "communication", "introduction", "r
 PART2_TITLE = "Part 2: Nominalisation in formal writing"
 PART2_INTRO = ("Nominalisation names an action or a quality as a noun, so that ‘people use phones’ becomes "
                "‘the use of phones’. It packs ideas into fewer words and gives formal writing a more academic "
-               "tone, and it is one of the clearest signs of a higher band in DSE Paper 2.")
+               "tone, and it can also carry an idea from one sentence into the next. Together they are among "
+               "the clearest signs of a higher band in DSE Paper 2.")
 
 # 4 examples, each: title, plain (wordy student sentence), formal (same facts, nominalised), short paragraph
 # that opens with the formal sentence and flows naturally. Plain/formal pairs carry NO new information.
@@ -80,6 +81,27 @@ EXAMPLES = [
                       "teachers have promised to test the new system before the start of term."),
     },
 ]
+
+# Linking sub-section (round-7 note): nominalisation as a COHESION device, same format as the examples.
+LINK_TITLE = "Nominalisation as a linking device"
+LINK_INTRO = ("Nominalisation does more than tighten one sentence — it can carry an idea from the previous "
+              "sentence into the next. Turn a verb or adjective into a noun, and open the new sentence with "
+              "it (usually after ‘This’, ‘Such’ or ‘The … of’). The reader moves from an idea already met "
+              "to a new one, and the paragraph flows more smoothly.")
+# each: s1 (plain), s2 runs where {"t": ..., "i": True} = the bridge noun (italic)
+LINK_EXAMPLES = [
+    {"s1": "Scammers play on panic and speed, so victims act before they think.",
+     "s2": ["This ", {"t": "reliance", "i": True}, " on emotion is exactly what the fraudsters count on."]},
+    {"s1": "Most students are far more aware of online privacy than their parents were.",
+     "s2": ["This growing ", {"t": "awareness", "i": True}, ", however, does not always protect them from clever scams."]},
+    {"s1": "Schools can protect students by teaching online safety early.",
+     "s2": ["This ", {"t": "education", "i": True}, " should begin long before students own a phone."]},
+]
+LINK_PARAGRAPH = ("Young people often trust official-looking messages without a second thought, and they seldom "
+                  "check who really sent them. Such misplaced trust is easily exploited: a credible-looking link "
+                  "is all a scammer needs. Such carelessness, in turn, keeps the fraud industry alive.")
+LINK_WATCHOUT = ("Watch out: avoid the over-used ‘This is because…’ and ‘This shows that…’. A noun bridge "
+                 "(“This reliance on emotion…”) says the same thing in fewer words and earns a higher band.")
 
 PART3_TITLE = "Part 3: Practice sets"
 PART3_INTRO = ("Rewrite each simple sentence using nominalisation. The sentences are about technology and "
@@ -123,6 +145,8 @@ INSTR_1 = ("1. Your school magazine is running a series called ‘Life in the Di
 INSTR_2 = ("2. Nominalise ONE of the words in the word bank below and use the noun in your paragraph. "
            "Also add ONE relative clause or ONE inverted pattern "
            "(e.g. Not only … but also …; Never …; Rarely …).")
+INSTR_3 = ("3. Link your ideas: open at least ONE sentence with a nominalised noun phrase that refers back "
+           "to the previous sentence (e.g. ‘This + noun’).")
 
 # Word bank for the writing task: five verbs/adjectives; students turn ONE into a noun (round-6 note).
 WORD_BANK_LABEL = "Word bank — turn ONE of these five into a noun, then use it in your paragraph:"
@@ -132,26 +156,32 @@ TEACHER_BANK_NOTE = ("Bank answers: protect → protection; aware → awareness;
                      "responsible → responsibility; believe → belief. Note how Sample answer 2 uses "
                      "‘awareness’ and Sample answer 3 uses ‘responsibility’.")
 
-# label, text — each ~78-83 words, ≥2 nominalisations + exactly 1 relative clause, natural flow
+# label, text — each ~78-83 words, ≥2 nominalisations + exactly 1 relative clause + ONE visible
+# "This/Such + noun" linking bridge, natural flow
 SAMPLES = [
     ("Sample answer 1 (Verbs → nouns) ",
      "Online scams have become a common problem because many young people trust official-looking messages "
-     "without a second thought. The spread of fake websites and phishing links is hard to stop, and it catches "
-     "even careful users by surprise. Schools, in my view, should teach students the importance of checking every "
-     "message before clicking, which is a vital skill in the digital world. A short course on online safety could "
-     "easily be added to existing computer lessons, and it would reach every student equally."),
+     "without a second thought. This misplaced trust is easy to exploit: fake websites and phishing links "
+     "catch even careful users by surprise. Schools, in my view, should teach students the importance of "
+     "checking every message before clicking, which is a vital skill in the digital world. A short course "
+     "on online safety could easily be added to existing computer lessons, and it would reach every student "
+     "equally."),
     ("Sample answer 2 (Adjectives → nouns) ",
-     "Young people’s awareness of online scams is often low, and their trust in strangers’ messages can be far "
-     "too high. The seriousness of the problem becomes clear only after money or personal data has been stolen, "
-     "which is usually far too late. Schools should therefore run regular lessons on spotting scams, treating it "
-     "as a basic life skill rather than an optional topic. Knowing how to pause and double-check before paying is "
-     "the strongest protection available to any student."),
+     "Many students are unaware of how dangerous online scams are, and they trust strangers’ messages far "
+     "too easily. This lack of awareness becomes costly only after money or personal data has been stolen, "
+     "which is usually far too late. Schools should therefore run regular lessons on spotting scams, "
+     "treating it as a basic life skill rather than an optional topic. Knowing how to pause and "
+     "double-check before paying is the strongest protection available to any student."),
     ("Sample answer 3 (Because / if → nouns) ",
-     "Owing to the constant flow of scam messages on social media, young people are targeted almost daily. The "
-     "ease of creating fake websites, together with the difficulty of telling them from real ones, explains why "
-     "so many victims never notice until it is too late. The responsibility for protection must be shared, which "
-     "means schools, platforms and parents all have a part to play. Parents can talk openly about scams at home, "
-     "while teachers can make online safety a regular lesson topic."),
+     "Owing to the constant flow of scam messages on social media, young people are targeted daily. "
+     "This constant targeting is hard to escape; the ease of creating fake websites, together with the "
+     "difficulty of telling them from real ones, leaves victims blind until it is too late. The "
+     "responsibility for protection must be shared, which means schools, platforms and parents have a "
+     "part to play. Parents can talk about scams at home, while teachers can make online safety a "
+     "regular topic."),
 ]
+TEACHER_BRIDGE_NOTE = ("Each sample opens ONE sentence with a nominalised bridge: “This misplaced trust”, "
+                       "“This lack of awareness”, “This constant targeting” — point these out to students "
+                       "before they write.")
 
 UNDERSCORE_LINE = "_" * 85

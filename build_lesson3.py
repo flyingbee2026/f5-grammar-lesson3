@@ -206,7 +206,7 @@ def build(is_teacher):
     add(make_table([2605, 6745], wrows))
     add(make_plain(''))
 
-    # ---- Part 2 ----
+    # ---- Part 2 ---- 
     add(make_heading(C.PART2_TITLE, '20'))
     add(make_plain(C.PART2_INTRO))
     for ex in C.EXAMPLES:
@@ -218,6 +218,19 @@ def build(is_teacher):
         fills = [[FILL_PATTERN, FILL_PATTERN]] * 2
         add(make_table([2605, 6745], rows, fills=fills))
         add(make_plain(ex['paragraph'], border=True))
+
+    # ---- Part 2b: Nominalisation as a linking device (round-7) ----
+    add(make_heading(C.LINK_TITLE, '31', sz='22'))
+    add(make_plain(C.LINK_INTRO))
+    for pair in C.LINK_EXAMPLES:
+        s2_cell = [[dict(text=r) if isinstance(r, str) else dict(text=r['t'], italic=r['i']) for r in pair['s2']]]
+        rows = [
+            [[dict(text='Sentence 1:')], [dict(text=pair['s1'])]],
+            [[dict(text='Linked sentence:')], s2_cell],
+        ]
+        add(make_table([2605, 6745], rows, fills=[[FILL_PATTERN, FILL_PATTERN]] * 2))
+    add(make_plain(C.LINK_PARAGRAPH, border=True))
+    add(make_plain(C.LINK_WATCHOUT, border=True))
 
     # ---- Part 3 ----
     add(make_plain(''))
@@ -245,6 +258,7 @@ def build(is_teacher):
     add(make_plain(C.INSTR_LABEL, border=True, fill=FILL_INSTR, bold=True))
     add(make_plain(C.INSTR_1, border=True, fill=FILL_INSTR))
     add(make_plain(C.INSTR_2, border=True, fill=FILL_INSTR))
+    add(make_plain(C.INSTR_3, border=True, fill=FILL_INSTR))
     add(make_plain(C.WORD_BANK_LABEL, border=True, fill=FILL_INSTR))
     if is_teacher:
         bank = "   ·   ".join(f"{w} → {n}" for w, n in zip(C.WORD_BANK, C.WORD_BANK_ANSWERS))
@@ -256,6 +270,7 @@ def build(is_teacher):
         add(make_plain(''))
         for label, text in C.SAMPLES:
             add(make_para([dict(text=label, bold=True), dict(text=text)], border=True, fill=FILL_ANSWERS))
+        add(make_plain(C.TEACHER_BRIDGE_NOTE, border=True, fill=FILL_ANSWERS))
     else:
         for _ in range(7):
             add(make_plain(C.UNDERSCORE_LINE))
