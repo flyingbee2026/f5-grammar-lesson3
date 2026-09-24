@@ -219,18 +219,16 @@ def build(is_teacher):
         add(make_table([2605, 6745], rows, fills=fills))
         add(make_plain(ex['paragraph'], border=True))
 
-    # ---- Part 2b: Nominalisation as a linking device (round-7) ----
+    # ---- Part 2b: Nominalisation as a linking device (round-7/8: single clear example) ----
     add(make_heading(C.LINK_TITLE, '31', sz='22'))
     add(make_plain(C.LINK_INTRO))
-    for pair in C.LINK_EXAMPLES:
-        s2_cell = [[dict(text=r) if isinstance(r, str) else dict(text=r['t'], italic=r['i']) for r in pair['s2']]]
-        rows = [
-            [[dict(text='Sentence 1:')], [dict(text=pair['s1'])]],
-            [[dict(text='Linked sentence:')], s2_cell],
-        ]
-        add(make_table([2605, 6745], rows, fills=[[FILL_PATTERN, FILL_PATTERN]] * 2))
-    add(make_plain(C.LINK_PARAGRAPH, border=True))
-    add(make_plain(C.LINK_WATCHOUT, border=True))
+    s2_cell = [[dict(text=r) if isinstance(r, str) else dict(text=r['t'], italic=r['i'])
+                for r in C.LINK_EXAMPLE['nominalised']]]
+    rows = [
+        [[dict(text='Plain (weak link):')], [dict(text=C.LINK_EXAMPLE['plain'])]],
+        [[dict(text='Nominalised (This / Such + noun):')], s2_cell],
+    ]
+    add(make_table([2605, 6745], rows, fills=[[FILL_PATTERN, FILL_PATTERN]] * 2))
 
     # ---- Part 3 ----
     add(make_plain(''))

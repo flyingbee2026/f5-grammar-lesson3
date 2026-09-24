@@ -82,31 +82,23 @@ EXAMPLES = [
     },
 ]
 
-# Linking sub-section (round-7 note): nominalisation as a COHESION device, same format as the examples.
+# Linking sub-section (round-7, trimmed round-8 per Helen: ONE clear example, no demo paragraph)
 LINK_TITLE = "Nominalisation as a linking device"
-LINK_INTRO = ("Nominalisation does more than tighten one sentence — it can carry an idea from the previous "
-              "sentence into the next. Turn a verb or adjective into a noun, and open the new sentence with "
-              "it (usually after ‘This’, ‘Such’ or ‘The … of’). The reader moves from an idea already met "
-              "to a new one, and the paragraph flows more smoothly.")
-# each: s1 (plain), s2 runs where {"t": ..., "i": True} = the bridge noun (italic)
-LINK_EXAMPLES = [
-    {"s1": "Scammers play on panic and speed, so victims act before they think.",
-     "s2": ["This ", {"t": "reliance", "i": True}, " on emotion is exactly what the fraudsters count on."]},
-    {"s1": "Most students are far more aware of online privacy than their parents were.",
-     "s2": ["This growing ", {"t": "awareness", "i": True}, ", however, does not always protect them from clever scams."]},
-    {"s1": "Schools can protect students by teaching online safety early.",
-     "s2": ["This ", {"t": "education", "i": True}, " should begin long before students own a phone."]},
-]
-LINK_PARAGRAPH = ("Young people often trust official-looking messages without a second thought, and they seldom "
-                  "check who really sent them. Such misplaced trust is easily exploited: a credible-looking link "
-                  "is all a scammer needs. Such carelessness, in turn, keeps the fraud industry alive.")
-LINK_WATCHOUT = ("Watch out: avoid the over-used ‘This is because…’ and ‘This shows that…’. A noun bridge "
-                 "(“This reliance on emotion…”) says the same thing in fewer words and earns a higher band.")
+LINK_INTRO = ("Nominalisation can also link one sentence to the next: turn a verb or adjective into a noun "
+              "and open the new sentence with it. Instead of the vague ‘This is because… / This shows that…’, "
+              "use ‘This…’, ‘Such…’ or ‘The … of…’ — the noun bridge says the same thing in fewer words and "
+              "earns a higher band.")
+LINK_EXAMPLE = {
+    "plain": ("Many young people click on links without checking where they lead. This is because they trust "
+              "whatever looks official."),
+    "nominalised": ["Many young people click on links without checking where they lead. ",
+                    {"t": "Such misplaced trust", "i": True},
+                    " is exactly what scammers exploit."],
+}
 
 PART3_TITLE = "Part 3: Practice sets"
 PART3_INTRO = ("Rewrite each simple sentence using nominalisation. The sentences are about technology and "
-               "communication, so keep the register formal. The last three sets (4, 5 and 6) are more "
-               "challenging.")
+               "communication, so keep the register formal. The later sets (4–7) are more challenging.")
 
 # Each set: title, simple sentence (plain, student-level), prompt, teacher answer (clearly better — level 3)
 # Sets 1-3 mirror the four Example moves with DIFFERENT target nouns; sets 4-6 are harder.
@@ -135,6 +127,11 @@ SETS = [
      "If the government does not control social media companies more strictly, online scams will just keep growing.",
      "Replace the ‘If ...’ clause with a noun phrase beginning with ‘Without ...’.",
      "Without stricter regulation of social media companies, online scams will continue to grow."),
+    ("Example Set 7 (Linking: adjective → noun)",
+     "Young people rarely question what they read online. This is because they are too careless.",
+     "Turn the adjective ‘careless’ into a noun and replace ‘This is because’ with a noun bridge opening "
+     "‘This…’ or ‘Such…’.",
+     "Few young people question what they read online. Such carelessness makes them easy prey for scammers."),
 ]
 
 PART4_TITLE = "Part 4: Writing Task"
