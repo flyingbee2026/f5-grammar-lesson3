@@ -100,6 +100,11 @@ def make_table(widths, rows, fills=None, label_bold_col=None):
     for ri, row in enumerate(rows):
         tr = mk('tr')
         for ci, cell_paras in enumerate(row):
+            # normalise nesting: a cell is a list of paragraphs; a paragraph is a list of run dicts
+            if isinstance(cell_paras, dict):
+                cell_paras = [[cell_paras]]
+            elif cell_paras and isinstance(cell_paras[0], dict):
+                cell_paras = [cell_paras]
             tc = mk('tc')
             tcPr = mk('tcPr')
             tcw = mk('tcW'); tcw.set(w('w'), str(widths[ci])); tcw.set(w('type'), 'dxa'); tcPr.append(tcw)
@@ -191,25 +196,30 @@ def build(is_teacher):
     # ---- Part 2 ----
     add(make_heading(C.PART2_TITLE, '20'))
     add(make_plain(C.PART2_INTRO))
-    for pat in C.PATTERNS:
-        add(make_heading(pat['title'], '31', sz='22'))
-        rows = [[cell_runs(lbl), cell_runs(val)] for lbl, val in pat['rows']]
-        fills = [[FILL_PATTERN, FILL_PATTERN]] * 3
-        add(make_table([4675, 4675], rows, fills=fills))
-        add(make_plain(pat['paragraph'], border=True))
-    if is_teacher:
-        add(make_heading(C.ADDITIONAL_TITLE, '31', sz='22'))
-        add(make_plain(C.ADDITIONAL_INTRO, color=TEXT_GREY))
-        add(make_heading(C.ADDITIONAL_H4, '4', sz=None, color=TEXT_GREY, bold=True, italic=True))
-        rows = [[cell_runs(lbl), cell_runs(val)] for lbl, val in C.ADDITIONAL_ROWS]
-        fills = [[FILL_ANSWERS, FILL_ANSWERS]] * 3
-        add(make_table([4675, 4675], rows, fills=fills))
-        add(make_plain(C.ADDITIONAL_EXT, color=TEXT_GREY))
-        add(make_plain(''))
+    add(make_plain(C.CONV_LEAD))
+    conv_rows = [[[[dict(text='Plain', bold=True)]], [[dict(text='More formal', bold=True)]]]]
+    for plain, formal in C.CONVERSIONS:
+        conv_rows.append([[[dict(text=plain)]], [[dict(text=formal)]]])
+    fills = [[FILL_PATTERN, FILL_PATTERN]] * len(conv_rows)
+    add(make_table([4675, 4675], conv_rows, fills=fills))
+    add(make_plain(''))
+    add(make_plain(C.PARA_LEAD))
+    for para in C.EXAMPLE_PARAS:
+        add(make_plain(para, border=True))
 
     # ---- Part 3 ----
+    add(make_plain(''))
     add(make_heading(C.PART3_TITLE, '1'))
     add(make_plain(C.PART3_INTRO))
+    add(make_heading(C.WARMUP_TITLE, '31', sz='22'))
+    add(make_plain(C.WARMUP_INTRO))
+    wrows = [[[[dict(text='Word', bold=True)]], [[dict(text='Noun', bold=True)]]]]
+    for i, word in enumerate(C.WARMUP_WORDS):
+        if is_teacher:
+            wrows.append([[[dict(text=word)]], [[dict(text=C.WARMUP_ANSWERS[i])]]])
+        else:
+            wrows.append([[[dict(text=word)]], [[dict(text='')]]])
+    add(make_table([2605, 6745], wrows))
     for title, simple, prompt, answer in C.SETS:
         add(make_heading(title, '31', sz='22'))
         if is_teacher:
