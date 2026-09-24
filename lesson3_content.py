@@ -120,7 +120,17 @@ INSTR_LABEL = "Instructions:"
 INSTR_1 = ("1. Your school magazine is running a series called ‘Life in the Digital Age’. Write ONE paragraph "
            "(about 80 words) explaining why online scams have become a common problem for young people, and "
            "suggesting ONE thing schools could do to protect them.")
-INSTR_2 = "2. Use TWO noun phrases formed by nominalisation and ONE relative clause."
+INSTR_2 = ("2. Nominalise ONE of the words in the word bank below and use the noun in your paragraph. "
+           "Also add ONE relative clause or ONE inverted pattern "
+           "(e.g. Not only … but also …; Never …; Rarely …).")
+
+# Word bank for the writing task: five verbs/adjectives; students turn ONE into a noun (round-6 note).
+WORD_BANK_LABEL = "Word bank — turn ONE of these five into a noun, then use it in your paragraph:"
+WORD_BANK = ["protect", "aware", "educate", "responsible", "believe"]
+WORD_BANK_ANSWERS = ["protection", "awareness", "education", "responsibility", "belief"]
+TEACHER_BANK_NOTE = ("Bank answers: protect → protection; aware → awareness; educate → education; "
+                     "responsible → responsibility; believe → belief. Note how Sample answer 2 uses "
+                     "‘awareness’ and Sample answer 3 uses ‘responsibility’.")
 
 # label, text — each ~78-83 words, ≥2 nominalisations + exactly 1 relative clause, natural flow
 SAMPLES = [

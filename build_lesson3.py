@@ -245,6 +245,13 @@ def build(is_teacher):
     add(make_plain(C.INSTR_LABEL, border=True, fill=FILL_INSTR, bold=True))
     add(make_plain(C.INSTR_1, border=True, fill=FILL_INSTR))
     add(make_plain(C.INSTR_2, border=True, fill=FILL_INSTR))
+    add(make_plain(C.WORD_BANK_LABEL, border=True, fill=FILL_INSTR))
+    if is_teacher:
+        bank = "   ·   ".join(f"{w} → {n}" for w, n in zip(C.WORD_BANK, C.WORD_BANK_ANSWERS))
+        add(make_plain(bank, border=True, fill=FILL_ANSWERS))
+        add(make_plain(C.TEACHER_BANK_NOTE, border=True, fill=FILL_ANSWERS))
+    else:
+        add(make_plain("   ·   ".join(C.WORD_BANK), border=True, fill=FILL_INSTR))
     if is_teacher:
         add(make_plain(''))
         for label, text in C.SAMPLES:
