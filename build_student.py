@@ -32,17 +32,20 @@ body.remove(ch)
 if blank_before is not None and blank_before.tag == qn('w:p'):
     body.remove(blank_before)          # avoid a double blank line
 
-# ---------- 2. blank the Noun column of the forming-nouns table ----------
+# ---------- 2. blank the Noun columns of the forming-nouns table ----------
 noun_tbl = None
 for t in doc.tables:
-    if len(t.rows) >= 15 and t.rows[0].cells[0].text.strip() == 'Word':
+    if len(t.rows) >= 10 and t.rows[0].cells[0].text.strip() == 'Word':
         noun_tbl = t
 assert noun_tbl is not None
+ncols = len(noun_tbl.columns)
+noun_cols = [1, 3] if ncols == 4 else [1]
 for r in noun_tbl.rows[1:]:
-    cell = r.cells[1]
-    for para in cell.paragraphs:
-        for run in list(para.runs):
-            run._r.getparent().remove(run._r)
+    for ci in noun_cols:
+        cell = r.cells[ci]
+        for para in cell.paragraphs:
+            for run in list(para.runs):
+                run._r.getparent().remove(run._r)
 
 # ---------- 3. practice sets: answer row -> blank writing space ----------
 set_tables = [t for t in doc.tables if len(t.rows) == 3
